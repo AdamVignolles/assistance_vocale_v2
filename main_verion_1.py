@@ -21,8 +21,9 @@ def gesture_volume(volume:int):
     
 
 def main():
-    message = vg.reconize_voice()
-    gesture_volume(20)
-    vg.speak(f"le volume est de {20} desormais, vous avez dit {message}")
+    while True : 
+        message = vg.reconize_voice()
+        gesture_volume(20)
+        vg.speak(f"le volume est de {20} desormais, vous avez dit {message}")
 
 main()
