@@ -3,7 +3,7 @@ import speech_recognition as sr
 
 class voice_gesture():
     def __init__(self):
-        self.isrun = False
+        self.isrun = True
 
     def speak(self, text):
         s = pyttsx3.init()
@@ -11,6 +11,7 @@ class voice_gesture():
         s.runAndWait()
 
     def reconize_voice(self):
+        message = "rien" 
         r = sr.Recognizer()
         with sr.Microphone() as source:
             audio = r.listen(source)
@@ -23,6 +24,6 @@ class voice_gesture():
                 else: 
                     message = sayed
             except sr.RequestError as e:
-                message = 'Le service Google API ne fonctione plus' + format(e)
-                
+                message = 'Le service Google API ne fonctione plus' + format(e) 
+                    
         return message
